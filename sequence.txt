@@ -1,0 +1,10 @@
+BG:img1.jpg
+HUMAN:img1.jpg
+HUMAN:img2.jpg
+BG:img2.jpg
+HUMAN:img3.jpg
+HUMAN:img4.jpg
+HUMAN:img5.jpg
+HUMAN:img6.jpg
+BG:img7.jpg
+HUMAN:img7.jpg

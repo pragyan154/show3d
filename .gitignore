@@ -1,0 +1,22 @@
+# Input images and personal media
+/input_photos
+
+# Pretrained AI models
+/pretrained_models
+
+# Python virtual environment
+.venv/
+
+# Byte-compiled / cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp

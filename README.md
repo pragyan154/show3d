@@ -1,6 +1,6 @@
 # 🚀 show3d: Turn Your Photos Into Stunning 3D Videos
 
-Ever wished your photos could come alive like magic? ✨ **show3d** lets you do just that! Transform ordinary 2D images into **cinematic 3D parallax videos**, just like Instagram’s 3D photo feature — but on your own Mac.  
+Ever wished your photos could come alive like magic? ✨ **show3d** lets you do just that! Transform ordinary 2D images into **cinematic 3D parallax slideshow videos**, just like Instagram’s 3D photo feature — but on your own Mac.  
 
 Your favorite moments will pop out with depth, creating an immersive visual experience that feels alive.
 
@@ -12,6 +12,30 @@ Your favorite moments will pop out with depth, creating an immersive visual expe
 - Generates realistic 3D parallax effects for dynamic slideshows.  
 - Smooth transitions between scenes for that cinematic vibe.  
 - No complicated editing — just give it your photos, and watch the magic happen.
+
+---
+
+## 🛠️ Technologies Used
+
+- **Python 3.11** – main programming language.  
+- **PyTorch** – deep learning backend, uses **MPS** on Mac Silicon.  
+- **OpenCV** – video creation, resizing, blending.  
+- **Pillow** – image processing.  
+- **rembg** – AI-powered human/background extraction.  
+- **Segment Anything Model (SAM)** – high-quality segmentation of subjects.  
+- **NumPy** – numerical operations on images.  
+
+---
+
+## 🔄 Flow / How It Works
+
+1. **Input Images** – Place all images in `input_photos/`.  
+2. **Layer Extraction** – AI separates humans/subjects from the background using `rembg` and `SAM`.  
+3. **Background Inpainting** – Any gaps left after extraction are filled automatically.  
+4. **Aspect Ratio & Cropping** – Images are resized and cropped to match video resolution.  
+5. **Sequence Execution** – `sequence.txt` defines which layers (BG / HUMAN) are shown and in what order.  
+6. **Blending & Video Creation** – Layers are blended together with parallax motion, generating smooth frames.  
+7. **Output** – Final cinematic video saved as `output_sequence_video.mp4`.
 
 ---
 
@@ -27,8 +51,8 @@ Your favorite moments will pop out with depth, creating an immersive visual expe
 
 - **macOS** (optimized for M1/M2/M3)  
 - **Python 3.11.x**  
-- **uv** (install globally with `pip install uv`)  
-- **Other dependencies** installed via the setup commands below  
+- **uv** (`pip install uv`)  
+- Other dependencies installed via the setup commands below  
 
 > ⚠️ For Windows/Linux: Python 3.11 + PyTorch CPU/CUDA versions may need adjustments. Replace the MPS device setup with `torch.device("cuda")` (if GPU available) or `torch.device("cpu")`.
 
